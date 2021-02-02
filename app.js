@@ -17,8 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 //Routes
-app.use("/api/complaints", //tokenValidation,
- complaintsRouter);
+app.use("/api/complaints", tokenValidation, complaintsRouter);
 
 app.listen(PORT, () => {
     console.log('Server starte at : '+PORT);
